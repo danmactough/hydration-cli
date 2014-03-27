@@ -1,6 +1,6 @@
 {
   "name": "hydration-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hydration on the command line",
   "main": "hydration.js",
   "scripts": {
