@@ -1,0 +1,22 @@
+{
+  "name": "hydration-cli",
+  "version": "0.0.0",
+  "description": "Hydration on the command line",
+  "main": "hydration.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "bin": {
+    "hydrate": "./bin/hydrate"
+  },
+  "keywords": [
+    "object",
+    "serialize",
+    "serialization"
+  ],
+  "author": "Dan MacTough <danmactough@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "hydration": "^0.5.0"
+  }
+}
