@@ -9,13 +9,47 @@ Usage
 **Example**
 
 ```sh
-redis-cli get "key:with:dehydrated:object" | hydrate
+$ redis-cli set "key:with:dehydrated:object" "{\"name\":\"some name\",\"counter\":2,\"timestamp\":\"2014-03-27T18:45:00.296Z\",\"fruits\":{\"0\":\"apples\",\"1\":\"bananas\",\"2\":\"oranges\"},\"related\":{\"siblings\":{\"0\":{\"id\":2,\"_types\":{\"id\":\"number\"}},\"1\":{\"id\":3,\"_types\":{\"id\":\"number\"}},\"_types\":{\"0\":\"object\",\"1\":\"object\"}},\"_types\":{\"siblings\":\"array\"}},\"_types\":{\"counter\":\"number\",\"timestamp\":\"date\",\"fruits\":\"array\",\"related\":\"object\"}}"
+OK
+$ redis-cli get "key:with:dehydrated:object" | hydrate
+{"name":"some name","counter":2,"timestamp":"2014-03-27T18:45:00.296Z","fruits":["apples","bananas","oranges"],"related":{"siblings":[{"id":2},{"id":3}]}}
 ```
 
 For pretty output, and other json manipulation, `npm install -g jsontool` and then:
 
 ```sh
-redis-cli get "key:with:dehydrated:object" | hydrate | json
+$ redis-cli get "key:with:dehydrated:object" | hydrate | json
+{
+  "name": "some name",
+  "counter": 2,
+  "timestamp": "2014-03-27T18:45:00.296Z",
+  "fruits": [
+    "apples",
+    "bananas",
+    "oranges"
+  ],
+  "related": {
+    "siblings": [
+      {
+        "id": 2
+      },
+      {
+        "id": 3
+      }
+    ]
+  }
+}
+
+# or even...
+$ redis-cli get "key:with:dehydrated:object" | hydrate | json -a "related.siblings"
+[
+  {
+    "id": 2
+  },
+  {
+    "id": 3
+  }
+]
 ```
 
 - - -
