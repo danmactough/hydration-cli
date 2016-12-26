@@ -17,7 +17,7 @@
   "author": "Dan MacTough <danmactough@gmail.com>",
   "license": "BSD",
   "dependencies": {
-    "hydration": "^0.5.0"
+    "hydration": "^1.0.0"
   },
   "devDependencies": {},
   "repository": {
