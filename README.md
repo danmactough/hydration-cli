@@ -1,6 +1,8 @@
 hydration-cli
 =============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/danmactough/hydration-cli.svg)](https://greenkeeper.io/)
+
 [Hydration](https://github.com/carlos8f/hydration) on the command line
 
 Usage
